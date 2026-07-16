@@ -2,11 +2,11 @@
 
 ## Run Information
 
-- **Date:** 2026-07-15T06:26:33Z
+- **Date:** 2026-07-16T06:36:03Z
 - **Commit:** [`79a5990`](https://github.com/arnabnandy7/client_java/commit/79a5990fbde8597023bb40a07e9f77e32b19fdd1)
 - **JDK:** 25.0.3 (OpenJDK 64-Bit Server VM)
 - **Benchmark config:** 3 fork(s), 3 warmup, 5 measurement, 4 threads
-- **Hardware:** AMD EPYC 7763 64-Core Processor, 4 cores, 16 GB RAM
+- **Hardware:** AMD EPYC 9V74 80-Core Processor, 4 cores, 16 GB RAM
 - **OS:** Linux 6.17.0-1018-azure
 
 ## Results
@@ -15,68 +15,68 @@
 
 | Benchmark | Score | Error | Units | |
 |:----------|------:|------:|:------|:---|
-| prometheusInc | 66.04K | ± 328.85 | ops/s | **fastest** |
-| prometheusNoLabelsInc | 56.66K | ± 397.58 | ops/s | 1.2x slower |
-| prometheusAdd | 51.29K | ± 432.02 | ops/s | 1.3x slower |
-| codahaleIncNoLabels | 48.66K | ± 1.26K | ops/s | 1.4x slower |
-| simpleclientInc | 6.57K | ± 40.67 | ops/s | 10x slower |
-| simpleclientNoLabelsInc | 6.39K | ± 180.81 | ops/s | 10x slower |
-| simpleclientAdd | 6.22K | ± 188.61 | ops/s | 11x slower |
-| openTelemetryIncNoLabels | 3.29K | ± 253.53 | ops/s | 20x slower |
-| openTelemetryInc | 3.03K | ± 211.38 | ops/s | 22x slower |
-| openTelemetryAdd | 3.00K | ± 191.72 | ops/s | 22x slower |
+| prometheusInc | 73.89K | ± 3.40K | ops/s | **fastest** |
+| prometheusNoLabelsInc | 65.61K | ± 134.35 | ops/s | 1.1x slower |
+| prometheusAdd | 63.13K | ± 901.10 | ops/s | 1.2x slower |
+| codahaleIncNoLabels | 56.69K | ± 179.50 | ops/s | 1.3x slower |
+| simpleclientAdd | 7.97K | ± 48.68 | ops/s | 9.3x slower |
+| simpleclientInc | 7.75K | ± 152.52 | ops/s | 9.5x slower |
+| simpleclientNoLabelsInc | 7.60K | ± 3.83 | ops/s | 9.7x slower |
+| openTelemetryAdd | 6.39K | ± 77.18 | ops/s | 12x slower |
+| openTelemetryInc | 5.75K | ± 1.56K | ops/s | 13x slower |
+| openTelemetryIncNoLabels | 4.62K | ± 386.24 | ops/s | 16x slower |
 
 ### HistogramBenchmark
 
 | Benchmark | Score | Error | Units | |
 |:----------|------:|------:|:------|:---|
-| prometheusClassic | 6.04K | ± 1.73K | ops/s | **fastest** |
-| simpleclient | 4.44K | ± 59.64 | ops/s | 1.4x slower |
-| prometheusNative | 2.65K | ± 112.88 | ops/s | 2.3x slower |
-| openTelemetryClassic | 774.13 | ± 21.24 | ops/s | 7.8x slower |
-| openTelemetryExponential | 610.96 | ± 25.80 | ops/s | 9.9x slower |
+| prometheusClassic | 6.19K | ± 903.24 | ops/s | **fastest** |
+| simpleclient | 5.89K | ± 121.01 | ops/s | 1.1x slower |
+| prometheusNative | 3.97K | ± 203.93 | ops/s | 1.6x slower |
+| openTelemetryClassic | 899.05 | ± 32.90 | ops/s | 6.9x slower |
+| openTelemetryExponential | 706.09 | ± 14.02 | ops/s | 8.8x slower |
 
 ### HistogramTextFormatBenchmark
 
 | Benchmark | Score | Error | Units | |
 |:----------|------:|------:|:------|:---|
-| openMetricsWriteToNull | 23.79K | ± 891.63 | ops/s | **fastest** |
-| prometheusWriteToNull | 23.46K | ± 861.17 | ops/s | 1.0x slower |
+| openMetricsWriteToNull | 35.22K | ± 337.08 | ops/s | **fastest** |
+| prometheusWriteToNull | 34.83K | ± 825.29 | ops/s | 1.0x slower |
 
 ### TextFormatUtilBenchmark
 
 | Benchmark | Score | Error | Units | |
 |:----------|------:|------:|:------|:---|
-| prometheusWriteToNull | 495.76K | ± 4.22K | ops/s | **fastest** |
-| prometheusWriteToByteArray | 487.77K | ± 3.50K | ops/s | 1.0x slower |
-| openMetricsWriteToNull | 476.26K | ± 3.21K | ops/s | 1.0x slower |
-| openMetricsWriteToByteArray | 474.22K | ± 4.52K | ops/s | 1.0x slower |
+| prometheusWriteToNull | 701.94K | ± 4.30K | ops/s | **fastest** |
+| prometheusWriteToByteArray | 684.63K | ± 2.88K | ops/s | 1.0x slower |
+| openMetricsWriteToNull | 661.06K | ± 3.19K | ops/s | 1.1x slower |
+| openMetricsWriteToByteArray | 644.09K | ± 6.35K | ops/s | 1.1x slower |
 
 ### Raw Results
 
 ```
 Benchmark                                            Mode  Cnt          Score        Error  Units
-CounterBenchmark.codahaleIncNoLabels                thrpt   15      48658.070   ± 1260.884  ops/s
-CounterBenchmark.openTelemetryAdd                   thrpt   15       3003.984    ± 191.717  ops/s
-CounterBenchmark.openTelemetryInc                   thrpt   15       3033.245    ± 211.377  ops/s
-CounterBenchmark.openTelemetryIncNoLabels           thrpt   15       3294.028    ± 253.529  ops/s
-CounterBenchmark.prometheusAdd                      thrpt   15      51290.423    ± 432.017  ops/s
-CounterBenchmark.prometheusInc                      thrpt   15      66035.522    ± 328.852  ops/s
-CounterBenchmark.prometheusNoLabelsInc              thrpt   15      56656.341    ± 397.577  ops/s
-CounterBenchmark.simpleclientAdd                    thrpt   15       6219.336    ± 188.614  ops/s
-CounterBenchmark.simpleclientInc                    thrpt   15       6567.266     ± 40.673  ops/s
-CounterBenchmark.simpleclientNoLabelsInc            thrpt   15       6386.101    ± 180.814  ops/s
-HistogramBenchmark.openTelemetryClassic             thrpt   15        774.132     ± 21.244  ops/s
-HistogramBenchmark.openTelemetryExponential         thrpt   15        610.961     ± 25.796  ops/s
-HistogramBenchmark.prometheusClassic                thrpt   15       6040.710   ± 1732.052  ops/s
-HistogramBenchmark.prometheusNative                 thrpt   15       2652.598    ± 112.884  ops/s
-HistogramBenchmark.simpleclient                     thrpt   15       4444.692     ± 59.637  ops/s
-HistogramTextFormatBenchmark.openMetricsWriteToNull  thrpt   15      23789.478    ± 891.635  ops/s
-HistogramTextFormatBenchmark.prometheusWriteToNull  thrpt   15      23464.064    ± 861.174  ops/s
-TextFormatUtilBenchmark.openMetricsWriteToByteArray  thrpt   15     474215.003   ± 4517.950  ops/s
-TextFormatUtilBenchmark.openMetricsWriteToNull      thrpt   15     476260.693   ± 3209.476  ops/s
-TextFormatUtilBenchmark.prometheusWriteToByteArray  thrpt   15     487770.074   ± 3496.531  ops/s
-TextFormatUtilBenchmark.prometheusWriteToNull       thrpt   15     495757.555   ± 4216.411  ops/s
+CounterBenchmark.codahaleIncNoLabels                thrpt   15      56693.548    ± 179.499  ops/s
+CounterBenchmark.openTelemetryAdd                   thrpt   15       6391.944     ± 77.175  ops/s
+CounterBenchmark.openTelemetryInc                   thrpt   15       5750.149   ± 1563.689  ops/s
+CounterBenchmark.openTelemetryIncNoLabels           thrpt   15       4621.030    ± 386.241  ops/s
+CounterBenchmark.prometheusAdd                      thrpt   15      63125.774    ± 901.096  ops/s
+CounterBenchmark.prometheusInc                      thrpt   15      73890.505   ± 3404.527  ops/s
+CounterBenchmark.prometheusNoLabelsInc              thrpt   15      65605.480    ± 134.350  ops/s
+CounterBenchmark.simpleclientAdd                    thrpt   15       7967.155     ± 48.680  ops/s
+CounterBenchmark.simpleclientInc                    thrpt   15       7754.922    ± 152.522  ops/s
+CounterBenchmark.simpleclientNoLabelsInc            thrpt   15       7599.342      ± 3.829  ops/s
+HistogramBenchmark.openTelemetryClassic             thrpt   15        899.055     ± 32.901  ops/s
+HistogramBenchmark.openTelemetryExponential         thrpt   15        706.088     ± 14.016  ops/s
+HistogramBenchmark.prometheusClassic                thrpt   15       6188.203    ± 903.242  ops/s
+HistogramBenchmark.prometheusNative                 thrpt   15       3974.219    ± 203.928  ops/s
+HistogramBenchmark.simpleclient                     thrpt   15       5889.655    ± 121.008  ops/s
+HistogramTextFormatBenchmark.openMetricsWriteToNull  thrpt   15      35218.433    ± 337.085  ops/s
+HistogramTextFormatBenchmark.prometheusWriteToNull  thrpt   15      34826.358    ± 825.291  ops/s
+TextFormatUtilBenchmark.openMetricsWriteToByteArray  thrpt   15     644091.380   ± 6351.303  ops/s
+TextFormatUtilBenchmark.openMetricsWriteToNull      thrpt   15     661061.016   ± 3194.235  ops/s
+TextFormatUtilBenchmark.prometheusWriteToByteArray  thrpt   15     684625.172   ± 2876.979  ops/s
+TextFormatUtilBenchmark.prometheusWriteToNull       thrpt   15     701944.966   ± 4295.261  ops/s
 ```
 
 ## Notes
